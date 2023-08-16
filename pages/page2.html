@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+
+    <script>
+        window.onload = function () {
+            const isInSafariController = () => {
+                return window.webkitIsFullScreen || document.documentElement.webkitFullscreenElement !== null || SFSafariViewController.isPresented;
+            };
+
+            if (isInSafariController()) {
+                // The web page is in the Safari View Controller.
+                document.getElementById("text-element").innerHTML = "This is running in controller";
+            } else {
+                // The web page is in the regular Safari browser.
+                document.getElementById("text-element").innerHTML = "This is running in safari browser";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Test 2</h1>
+    <br />
+    <h1 id="text-element"></h1>
+</body>
+
+</html>
